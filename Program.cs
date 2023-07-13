@@ -1,18 +1,33 @@
-﻿string[] array1 = new string[5] { "Russia", "Denmark", "Poland", "USA", "UAE" };
+﻿// Написать программу, которая из имеющегося массива строк формирует новый массив из строк,
+// длина которых меньше, либо равна 3 символам. Первоначальный массив можно ввести с клавиатуры, 
+// либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями,
+// лучше обойтись исключительно массивами.
+string[] array1 = new string[5] { "Russia", "Denmark", "Poland", "USA", "UAE" };
 string[] array2 = new string[array1.Length];
 
-int count = 0; 
-
-for (int i = 0; i < array1.Length; i++)
+void ChangedArray (string[] array1, string[] array2)
 {
-    if (array1[i].Length <= 3)
+
+    int count = 0; 
+
+    for (int i = 0; i < array1.Length; i++)
     {
-        array2[count] = array1[i];
-        count++;
+        if (array1[i].Length <= 3)
+        {
+            array2[count] = array1[i];
+            count++;
+        }
     }
 }
 
-for (int i = 0; i < count; i++)
+void PrintArray (string[] array)
 {
-    System.Console.WriteLine(array2[i]);
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.WriteLine(array2[i]);
+    }
 }
+
+ChangedArray(array1, array2);
+PrintArray(array2);
